@@ -1,0 +1,13 @@
+<h1>Drink! Drink! Drink!</h1>
+
+<%= link_to "Not enough cocktails!", new_cocktail_path, class: "btn btn-primary" %>
+
+
+<% @cocktails.each do |cocktail| %>
+<ul class="list-inline">
+<li> <%= cocktail.name %> </li>
+<li><%= link_to "see tha thing!", cocktail_path(cocktail), class: "btn btn-primary" %></li>
+</ul>
+<% end %>
+
+
