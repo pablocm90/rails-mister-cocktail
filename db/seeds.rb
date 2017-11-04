@@ -11,7 +11,6 @@ puts "deleting all things"
 Cocktail.destroy_all
 Dose.destroy_all
 Ingredient.destroy_all
-Review.destroy_all
 
 
 require 'json'
