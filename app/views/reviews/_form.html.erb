@@ -1,0 +1,17 @@
+<%=  simple_form_for [@cocktail, @review] do |f|  %>
+
+<div class="form-inputs row align-items-center">
+  <div class="col-xs-12 col-sm-8">
+    <%= f.input :content, label: "what do you think of this cocktail", class: "input-big" %>
+  </div>
+  <div class="col-xs-12 col-sm-2">
+    <%= f.input :rating, collection: [1,2,3,4,5] %>
+  </div>
+  <div class="col-xs-12 col-sm-2">
+    <%= f.button :submit, class: "fa fa-check" %>
+  </div>
+</div>
+<% end %>
+
+
+

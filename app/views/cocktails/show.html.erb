@@ -13,19 +13,26 @@
 
   <% @cocktail.doses.each do |dose| %>
 
-  <ul class="list-inline">
       <tr>
         <td> <%= dose.ingredient.name %></td>
         <td><%= dose.description %></td>
         <td><%= link_to "", dose_path(dose), method: :delete, data: {confirm: "ya sure?"}, class: "fa fa-trash"%></td>
       </tr>
-  </ul>
 
   <% end %>
 
     </tbody>
   </table>
   <%= render 'doses/form' %>
+
+  <% @cocktail.reviews.each do |review| %>
+    <div class="reviews">
+      <div class="rating"> <%= review.rating  %></div>
+      <div class="review-content"> <%= review.content  %></div>
+    </div>
+  <% end %>
+
+  <%= render 'reviews/form' %>
 
   <%= link_to "back to the list", cocktails_path, class: "btn btn-primary" %>
 </div>

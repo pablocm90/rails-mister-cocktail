@@ -1,7 +1,13 @@
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :ingredient_id, collection: @ingredients %>
-  <%= f.input :description, label: "what is the dosage?" %>
-
-  <%= f.button :submit %>
-
+<%= simple_form_for [@cocktail, @dose], html: {class: "form-horizontal"} do |f| %>
+  <div class="form-inputs row align-items-center">
+  <div class="col-xs-12 col-sm-5">
+    <%= f.input :ingredient_id, collection: @ingredients %>
+  </div>
+  <div class="col-xs-12 col-sm-5">
+    <%= f.input :description, label: "what is the dosage?" %>
+  </div>
+  <div class="col-xs-12 col-sm-2">
+  <%= f.submit :submit, class: 'fa fa-check', value: "submit" %>
+    </div>
+  </div>
 <% end %>
