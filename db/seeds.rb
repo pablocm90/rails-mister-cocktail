@@ -14,9 +14,14 @@ Ingredient.destroy_all
 
 puts "creating cocktails"
 
+pictures = %w(http://res.cloudinary.com/pablocm90/image/upload/v1509715579/cocktail1.jpg http://res.cloudinary.com/pablocm90/image/upload/v1509715575/cocktail5.jpg http://res.cloudinary.com/pablocm90/image/upload/v1509715570/cocktail6.jpg http://res.cloudinary.com/pablocm90/image/upload/v1509715566/cocktail2.jpg http://res.cloudinary.com/pablocm90/image/upload/v1509715563/cocktail3.jpg http://res.cloudinary.com/pablocm90/image/upload/v1509715557/cocktail4.jpg)
+
+
 10.times do
+  url = pictures.sample
   name = Faker::LordOfTheRings.character
   cocktail = Cocktail.new(name: name)
+  cocktail.remote_photo_url = url
   cocktail.save
   p "#{cocktail.name}"
 end
